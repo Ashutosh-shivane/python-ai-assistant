@@ -19,7 +19,10 @@ Requirements:
 """
 
 import asyncio
-import audioop          # stdlib — mulaw <-> pcm, resample
+try:
+    import audioop
+except ModuleNotFoundError:
+    import audioop_lts as audioop
 import base64
 import json
 import os
